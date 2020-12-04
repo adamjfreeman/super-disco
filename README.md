@@ -1,2 +1,0 @@
-# super-disco
-daily calendar
