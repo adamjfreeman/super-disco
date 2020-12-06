@@ -144,20 +144,21 @@
 
 
           <script type="text/javascript">
+
+      saveTask4.onclick = function (){
             const impTask4 = document.getElementById ("impTask4");
             const saveTask4 = document.getElementById("saveTask4");
+            const task = impTask4.value;
+                
       
-            saveTask4.onclick = function (){
-                const task = impTask4.value;
-                console.log (task);
-      
-               if ("task",task) {
-                 localStorage.setItem("task", JSON.stringify(task));
-                 localStorage.getItem("task");
-                 JSON.parse(window.localStorage.getItem("task"));  
-               }
-                  
-            };
+               
+                localStorage.setItem('dataObject', JSON.stringify(task));
+                const dataObject = localStorage.getItem('dataObject');
+                console.log (dataObject);
+  
+            
+
+               };
              </script>
 
           <div class="row" id="12">
@@ -381,7 +382,7 @@ Array.from(rows).forEach(row => {
     // Compares row id to current hour and sets color accordingly
     if (currentHour === rowHour) {
       setColor(row, "red");
-    } else if ((currentHour < rowHour) && (currentHour > rowHour - 6)) {
+    } else if ((currentHour < rowHour) && (currentHour > rowHour - 7)) {
       setColor(row, "green");
     } else if ((currentHour > rowHour) && (currentHour < rowHour + 6)) {
       setColor(row, "lightgrey");
